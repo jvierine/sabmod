@@ -47,7 +47,8 @@ def run_sabmod(rho_scale=1.0, v0=70e3):
     date = datetime(2020,1,1)
 
     for i in range(len(z)-1):
-
+        # tbd, fix missing theta issue
+        # we need to take into account how theta increases travel time!!!
         alt = z[i]
 
         # MSIS neutral density
