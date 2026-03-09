@@ -141,11 +141,13 @@ def vel_sweep():
     ax[1].set_title("(b)")
 
     # Save as vector graphic (best for journals)
+    plt.savefig("meteor_ablation_single_column.png", bbox_inches="tight")
+
     plt.savefig("meteor_ablation_single_column.pdf", bbox_inches="tight")
     plt.show()
-#vel_sweep()
+vel_sweep()
 
-def rho_vel_sweep(gamma=1.1):
+def rho_vel_sweep(gamma=0.5):
 
 
     peak_alt_funs=[]
@@ -250,7 +252,9 @@ def rho_vel_sweep(gamma=1.1):
     ax.legend(frameon=False)
 
     plt.tight_layout()
+    plt.savefig("peak_ablation_height.png", bbox_inches="tight")
     plt.savefig("peak_ablation_height.pdf", bbox_inches="tight")
+
     plt.show()
 
 rho_vel_sweep()
