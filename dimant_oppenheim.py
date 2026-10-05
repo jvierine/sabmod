@@ -10,6 +10,15 @@ import numpy as np
 from scipy.integrate import quad
 from scipy.special import erf
 
+# Related MetAblate implementation (upstream snapshot c31ef4e):
+# https://github.com/danielk333/ablate/blob/c31ef4e67c58d477391ec499ca8dd73976be5e3d/src/metablate/models/dimant_oppenheim_2017.py
+# This standalone version takes one point and returns ne/n_star, rather than
+# a grid morphology or a density scaled with supplied meteor parameters.
+# It combines the two Eq. 48 integrals into one quad call, integrates to 1,
+# uses the analytic zero-width limit on the axis, and does not apply abs().
+# Eq. 46 uses sqrt(1 + A/(2*pi)); that snapshot incorrectly used
+# sqrt((1 + A)/(2*pi)) and moved the lower integration bound near the axis.
+# The corresponding MetAblate fixes are in https://github.com/jvierine/ablate/pull/1.
 
 def electron_density(z, r):
     R = np.hypot(z, r)
