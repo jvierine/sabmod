@@ -33,5 +33,5 @@ historical screenshots; no archived trajectories or old-source patches are used.
 
 Figure dimensions follow the manuscript's 177 mm text width, with embedded
 fonts at least 10 pt. The density-figure legend is below the panels to keep
-those labels readable at paper width. Keep script provenance in captions;
-the generator also embeds it in PDF metadata and the HDF5 archive.
+those labels readable at paper width. Keep script provenance in code comments,
+PDF metadata and the HDF5 archive only; never render it in figures or captions.
